@@ -7,4 +7,5 @@ export const routes: Routes = [
     {path:"countries", component:CountryComponent},
     {path:"cities", component:CityComponent}, 
     {path:"", component:WeatherComponent,pathMatch:"full"}
+   
 ];
