@@ -20,6 +20,7 @@ import { LoginResponse } from './login-response';
 })
 export class LoginComponent implements OnInit {
   onSubmit():void {
+    var loginResponse : LoginResponse ;
     var loginRequest : LoginRequest = {
       userName : this.form.controls["userName"].value,
       password : this.form.controls["password"].value
@@ -30,16 +31,14 @@ export class LoginComponent implements OnInit {
           
           loginResponse = result;
           console.log(loginResponse);
-          
+          if(result.success){
+            localStorage.setItem("counrtyPass",result.token);
+
+          }
         },
         error: e => console.error(e)
       }
     );
-    var loginResponse : LoginResponse = {
-      success : this.form.controls["success"].value,
-      message : this.form.controls["message"].value,
-      token  : this.form.controls["token"].value
-    };
     
     
   }

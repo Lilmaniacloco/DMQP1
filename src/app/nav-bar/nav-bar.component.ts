@@ -12,7 +12,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
+onLogout() {
+throw new Error('Method not implemented.');
+}
 
+loggedIn: boolean = false;
 
 
   
